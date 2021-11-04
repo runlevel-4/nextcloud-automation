@@ -16,7 +16,7 @@
 
 ============================================================================
 
-1. `git clone https://github.com/edwardsj9090/nextcloud-automation`
+1. `git clone https://github.com/runlevel-4/nextcloud-automation`
 2. `sh nextcloud-automation/install_nextcloud.sh`
 
 **Default Database Values**
