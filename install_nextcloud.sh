@@ -10,9 +10,16 @@ if grep -q Debian "/etc/os-release" ; then
 	sudo apt install -y curl wget gnupg2 ca-certificates lsb-release apt-transport-https
 	wget https://packages.sury.org/php/apt.gpg
 	sudo apt-key add apt.gpg
-  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php7.list
+  echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/php8.list
 else
 	echo "Not Debian...continuing"
+	echo
+	echo "Adding Ubuntu PHP repos"
+	echo
+	# Add the PHP 8.0 repo
+	sudo apt install ca-certificates apt-transport-https software-properties-common -y
+	sudo add-apt-repository ppa:ondrej/php
+	sudo add-apt-repository ppa:ondrej/apache2
 fi
 
 #Perform updates
